@@ -3,3 +3,8 @@ dist
 .playwright-mcp
 *.log
 .DS_Store
+
+# promo material and the scripts that make it
+фото
+видео
+.promo-tools

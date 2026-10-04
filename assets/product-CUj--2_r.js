@@ -1,0 +1,18 @@
+import{P as p,f as y,D as b,b as z,a as $,d as S,p as j}from"./menu-B9g9KdXQ.js";const T=new URLSearchParams(location.search).get("id"),i=p.find(e=>e.id===T)??p[0],s=e=>document.querySelector(e);document.title=`${i.name} — AVNT`;s("#pdp-code").textContent=`AVNT 01 / ${i.code}`;s("#pdp-name").textContent=i.name;s("#pdp-edition").textContent=`${i.edition} pcs / numbered`;s("#pdp-material").textContent=i.material;s("#pdp-fit").textContent=i.fit;s("#pdp-price").textContent=y(i.price);s("#pdp-about").textContent=i.details;s("#pdp-care").textContent=i.care;s("#pdp-delivery").textContent=b;const l=s("#pdp-guide"),x=s("#pdp-guide-toggle");l.innerHTML=`<tr><th>Size</th>${i.guide.cols.map(e=>`<th>${e}, cm</th>`).join("")}</tr>`+Object.entries(i.guide.rows).map(([e,t])=>`<tr data-size="${e}"><td>${e}</td>${t.map(n=>`<td>${n}</td>`).join("")}</tr>`).join("");x.addEventListener("click",()=>{l.hidden=!l.hidden,x.textContent=l.hidden?"Size guide +":"Size guide –"});s("#pdp-index").textContent=`${i.index} / 0${p.length}`;const o=s(".pdp__main"),c=s("#pdp-image"),w=s("#pdp-view"),L=s("#pdp-details"),d=i.views??z,_=(e,{zoom:t,origin:n})=>{e.style.transformOrigin=n,e.style.transform=`scale(${t})`};L.style.setProperty("--tiles",d.length);L.innerHTML=d.map((e,t)=>`
+      <button class="pdp__detail ph" type="button" aria-label="${e.label}" title="${e.label}">
+        <img src="${$(i,e.image)}" alt="" />
+      </button>`).join("");const u=[...L.children];c.alt=i.name;i.focus&&(c.style.objectPosition=i.focus);u.forEach((e,t)=>{const n=e.querySelector("img");i.focus&&(n.style.objectPosition=i.focus),_(n,d[t])});let v=-1,m=!1;function f(e,{wipe:t=!0}={}){if(e===v&&!m)return;v=e,m=!1,o.classList.remove("is-zoomed"),u.forEach((g,h)=>g.classList.toggle("is-active",h===e)),w.textContent=d[e].label;const n=$(i,d[e].image);c.getAttribute("src")!==n&&(c.src=n),_(c,d[e]),t&&(o.classList.remove("is-switching"),o.offsetWidth,o.classList.add("is-switching"))}f(0,{wipe:!1});u.forEach((e,t)=>{e.addEventListener("click",()=>f(t)),e.addEventListener("mouseenter",()=>f(t))});o.addEventListener("click",e=>{if(m){f(v,{wipe:!1});return}const t=o.getBoundingClientRect(),n=(e.clientX-t.left)/t.width*100,g=(e.clientY-t.top)/t.height*100;m=!0,o.classList.add("is-zoomed"),u.forEach(h=>h.classList.remove("is-active")),w.textContent="Zoom",_(c,{zoom:2.8,origin:`${n.toFixed(1)}% ${g.toFixed(1)}%`})});const C=[...document.querySelectorAll(".pdp__size")],E=s(".pdp__add"),a=s("#pdp-hint");let r=null;C.forEach(e=>e.addEventListener("click",()=>{r=e.textContent,C.forEach(t=>t.classList.toggle("is-active",t===e)),a.textContent=`Size / ${r}`,l.querySelectorAll("tr").forEach(t=>t.classList.toggle("is-active",t.dataset.size===r)),a.classList.remove("is-warn")}));E.addEventListener("click",()=>{if(!r){a.textContent="Select size",a.classList.remove("is-warn"),a.offsetWidth,a.classList.add("is-warn");return}S(i.id,r),E.querySelector("span").textContent=`Added / ${r}`});s("#pdp-more").innerHTML=p.filter(e=>e!==i).map(e=>`
+      <a class="piece" href="${j(e)}" data-reveal>
+        <div class="piece__media ph has-photo">
+          <div class="piece__media-inner">
+            <img src="${$(e)}" alt="${e.name}" loading="lazy" style="${e.focus?`object-position: ${e.focus}`:""}" />
+          </div>
+          <div class="piece__tag mono"><span>AVNT 01 / ${e.code}</span><span>${e.index}</span></div>
+          <div class="piece__enter mono"><span>Enter product</span><i>→</i></div>
+        </div>
+        <div class="piece__info">
+          <h3>${e.name}</h3>
+          <p class="piece__price">${y(e.price)}</p>
+          <p class="mono">Edition of <span data-count="${e.edition}">${e.edition}</span></p>
+        </div>
+      </a>`).join("");

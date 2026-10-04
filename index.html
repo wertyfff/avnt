@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ru" class="is-locked">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVNT — Drop 01</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/main-9v5c0uX4.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/menu-B9g9KdXQ.js">
+    <link rel="stylesheet" crossorigin href="./assets/menu-BYaqaTc3.css">
+  </head>
+  <body>
+    <div class="preloader" id="preloader">
+      <div class="preloader__brand">AVNT</div>
+      <div class="preloader__num">01</div>
+      <div class="preloader__line"><span id="preloader-bar"></span></div>
+    </div>
+
+    <header class="header">
+      <a class="header__brand" href="#top">AVNT</a>
+      <nav class="header__nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О бренде</a>
+        <a href="#store">Магазин</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="header__cart">Корзина (0)</a>
+        <button class="header__menu" type="button">Меню</button>
+      </div>
+    </header>
+
+    <canvas class="stage" id="stage" aria-hidden="true"></canvas>
+
+    <main id="top">
+      <section class="hero" id="hero">
+        <div class="hero__sticky">
+          <div class="hero__copy" id="hero-copy">
+            <p class="hero__label">New Collection<span>2026</span></p>
+            <p class="hero__hint">Scroll to explore <i>↓</i></p>
+          </div>
+
+          <div class="reveal" id="reveal">
+            <div class="reveal__text">
+              <p class="eyebrow">01 — Новая коллекция</p>
+              <h2 class="reveal__title">Not for<br />everyone</h2>
+              <p class="reveal__lead">
+                Оправы из плотного ацетата, собранные вручную. Чёткая геометрия, глубокий чёрный,
+                ничего лишнего.
+              </p>
+              <a class="link" href="#catalog">Смотреть коллекцию <i>→</i></a>
+            </div>
+            <div class="reveal__media ph">
+              <img src="./img/look-01.jpg" alt="AVNT 01 — look 01" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <div class="ticker__group">
+            <span>Before everyone</span><span>AVNT 01</span><span>Drop 001 / Form</span
+            ><span>Edition / 100</span><span>You found it early</span><span>Not mass</span
+            ><span>The few find the few</span><span>Status / Available</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <section class="block early" id="about">
+        <div class="early__media ph" data-parallax data-unveil>
+          <div class="early__media-inner">
+            <img src="./img/campaign-01.jpg" alt="AVNT 01 — campaign, front" loading="lazy" />
+            <img
+              class="early__alt"
+              src="./img/campaign-02.jpg"
+              alt="AVNT 01 — campaign, side"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="early__text">
+          <p class="mono" data-reveal>AVNT / Independent streetwear / 2026</p>
+          <h2 class="display" data-lines>
+            <span class="line"><span>You found it</span></span>
+            <span class="line"><span>before</span></span>
+            <span class="line"><span>everyone.</span></span>
+          </h2>
+        </div>
+        <div class="early__foot mono" data-reveal>
+          <span>Screen / 02</span>
+          <span>Less seen. More felt.</span>
+          <span>For those who notice</span>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section class="block block--dark manifesto">
+        <p class="mono" data-reveal>Manifest / 03</p>
+        <h2 class="manifesto__lines">
+          <span class="manifesto__line">Not mass.</span>
+          <span class="manifesto__line">Not random.</span>
+          <span class="manifesto__line">Not for everyone.</span>
+        </h2>
+        <ul class="manifesto__rules">
+          <li data-reveal>
+            <p class="mono">01</p>
+            <b>Limited</b>
+            <p>Каждая вещь выходит фиксированным тиражом.</p>
+          </li>
+          <li data-reveal>
+            <p class="mono">02</p>
+            <b>Numbered</b>
+            <p>У каждого экземпляра свой серийный номер.</p>
+          </li>
+          <li data-reveal>
+            <p class="mono">03</p>
+            <b>Never reissued</b>
+            <p>Тираж закончился — вещь уходит в архив.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 04 + 05 -->
+      <section class="block drop" id="catalog">
+        <div class="drop__head">
+          <h2 class="display drop__title" data-lines>
+            <span class="line"><span>Drop 01</span></span>
+            <span class="line"><span><small>Form — limited edition</small></span></span>
+          </h2>
+          <dl class="spec mono" data-reveal>
+            <div><dt>Drop</dt><dd>001</dd></div>
+            <div><dt>Pieces</dt><dd>04</dd></div>
+            <div><dt>Release</dt><dd>2026</dd></div>
+            <div><dt>Status</dt><dd>Available</dd></div>
+          </dl>
+        </div>
+
+        <ol class="stages mono" data-reveal>
+          <li class="is-active"><i class="dot"></i>01 — Available</li>
+          <li><i class="dot"></i>02 — Sold out</li>
+          <li><i class="dot"></i>03 — Archived</li>
+        </ol>
+
+        <div class="pieces">
+          <a class="piece" href="product.html?id=tee-001" data-reveal>
+            <div class="piece__media ph has-photo">
+              <div class="piece__media-inner">
+                <img src="./img/products/tee-001.jpg" alt="Form Tee" loading="lazy" />
+              </div>
+              <div class="piece__tag mono"><span>AVNT 01 / TEE-001</span><span>01</span></div>
+              <div class="piece__enter mono"><span>Enter product</span><i>→</i></div>
+            </div>
+            <div class="piece__info">
+              <h3>Form Tee</h3>
+              <p class="piece__price">6 900 ₽</p>
+              <p class="mono">Edition of <span data-count="100">100</span></p>
+            </div>
+          </a>
+          <a class="piece" href="product.html?id=hood-002" data-reveal>
+            <div class="piece__media ph has-photo">
+              <div class="piece__media-inner">
+                <img src="./img/products/hood-002.jpg" alt="Form Hoodie" loading="lazy" />
+              </div>
+              <div class="piece__tag mono"><span>AVNT 01 / HOOD-002</span><span>02</span></div>
+              <div class="piece__enter mono"><span>Enter product</span><i>→</i></div>
+            </div>
+            <div class="piece__info">
+              <h3>Form Hoodie</h3>
+              <p class="piece__price">12 900 ₽</p>
+              <p class="mono">Edition of <span data-count="50">50</span></p>
+            </div>
+          </a>
+          <a class="piece" href="product.html?id=jkt-003" data-reveal>
+            <div class="piece__media ph has-photo">
+              <div class="piece__media-inner">
+                <img src="./img/products/jkt-003.jpg" alt="Form Jacket" loading="lazy" />
+              </div>
+              <div class="piece__tag mono"><span>AVNT 01 / JKT-003</span><span>03</span></div>
+              <div class="piece__enter mono"><span>Enter product</span><i>→</i></div>
+            </div>
+            <div class="piece__info">
+              <h3>Form Jacket</h3>
+              <p class="piece__price">24 900 ₽</p>
+              <p class="mono">Edition of <span data-count="30">30</span></p>
+            </div>
+          </a>
+          <a class="piece" href="product.html?id=trs-004" data-reveal>
+            <div class="piece__media ph has-photo">
+              <div class="piece__media-inner">
+                <img
+                  src="./img/products/trs-004.jpg"
+                  alt="Form Trousers"
+                  loading="lazy"
+                  style="object-position: 50% 70%"
+                />
+              </div>
+              <div class="piece__tag mono"><span>AVNT 01 / TRS-004</span><span>04</span></div>
+              <div class="piece__enter mono"><span>Enter product</span><i>→</i></div>
+            </div>
+            <div class="piece__info">
+              <h3>Form Trousers</h3>
+              <p class="piece__price">11 900 ₽</p>
+              <p class="mono">Edition of <span data-count="20">20</span></p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- found -->
+      <section class="block block--dark found" id="store">
+        <div class="found__head">
+          <h2 class="display" data-lines><span class="line"><span>Found</span></span></h2>
+          <p class="mono" data-reveal>Last seen / by city / 29 pieces</p>
+        </div>
+        <ul class="found__list">
+          <li
+            class="found__row"
+            data-city="Moscow"
+            data-img="img/found/moscow.jpg"
+            data-pos="50% 50%"
+            data-reveal
+          >
+            <span class="mono">01</span><span class="found__city">Moscow</span
+            ><span class="found__count">12</span>
+          </li>
+          <li
+            class="found__row"
+            data-city="Berlin"
+            data-img="img/found/berlin.jpg"
+            data-pos="50% 12%"
+            data-reveal
+          >
+            <span class="mono">02</span><span class="found__city">Berlin</span
+            ><span class="found__count">08</span>
+          </li>
+          <li
+            class="found__row"
+            data-city="Seoul"
+            data-img="img/found/seoul.jpg"
+            data-pos="50% 50%"
+            data-reveal
+          >
+            <span class="mono">03</span><span class="found__city">Seoul</span
+            ><span class="found__count">04</span>
+          </li>
+          <li
+            class="found__row"
+            data-city="Paris"
+            data-img="img/found/paris.jpg"
+            data-pos="50% 60%"
+            data-reveal
+          >
+            <span class="mono">04</span><span class="found__city">Paris</span
+            ><span class="found__count">03</span>
+          </li>
+          <li
+            class="found__row"
+            data-city="Tokyo"
+            data-img="img/found/tokyo.jpg"
+            data-pos="50% 45%"
+            data-reveal
+          >
+            <span class="mono">05</span><span class="found__city">Tokyo</span
+            ><span class="found__count">02</span>
+          </li>
+        </ul>
+        <div class="found__preview ph has-photo" aria-hidden="true">
+          <img alt="" />
+          <span>Found</span>
+        </div>
+      </section>
+
+      <!-- archive -->
+      <section class="block archive">
+        <div class="archive__head">
+          <h2 data-lines>
+            <span class="line"><span>This piece</span></span>
+            <span class="line"><span>will not return.</span></span>
+          </h2>
+          <p data-reveal>
+            Каждый дроп проходит три стадии: доступен, распродан, в архиве. Архив не
+            переиздаётся.
+          </p>
+        </div>
+        <ul class="archive__list">
+          <li class="archive__row" data-reveal>
+            <span class="mono">AVNT 01 / Drop 01</span><b>Form</b><span class="mono">2026</span
+            ><span class="mono status is-active"><i class="dot"></i>Available</span>
+          </li>
+          <li class="archive__row is-locked" data-reveal>
+            <span class="mono">AVNT 01 / Drop 02</span><b>Next / 02</b><span class="mono">2027</span
+            ><span class="mono status">Soon</span>
+          </li>
+          <li class="archive__row is-locked" data-reveal>
+            <span class="mono">AVNT 01 / Drop 03</span><b>Next / 03</b><span class="mono">TBA</span
+            ><span class="mono status">Locked</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot__top">
+        <p class="foot__claim" data-lines>
+          <span class="line"><span>The few</span></span>
+          <span class="line"><span>find the few.</span></span>
+        </p>
+        <nav class="foot__col" data-reveal>
+          <p class="mono">Index</p>
+          <a href="./#catalog">Drop 01</a>
+          <a href="./#store">Found</a>
+          <a href="./#about">Manifest</a>
+        </nav>
+        <nav class="foot__col" data-reveal>
+          <p class="mono">Info</p>
+          <a href="info.html#delivery">Доставка</a>
+          <a href="info.html#payment">Оплата</a>
+          <a href="info.html#returns">Возврат</a>
+        </nav>
+        <nav class="foot__col" data-reveal>
+          <p class="mono">Contact</p>
+          <a href="https://t.me/kiwnt1" target="_blank" rel="noopener">Telegram</a>
+          <a href="info.html#contacts">Контакты</a>
+        </nav>
+      </div>
+      <div class="foot__mark" aria-label="AVNT 01">AVNT<sup>01</sup></div>
+      <div class="foot__bottom mono">
+        <span>© 2026 AVNT</span>
+        <span>Location / 55.7558° N 37.6173° E</span>
+        <span>MSK / <span id="clock">00:00:00</span></span>
+      </div>
+    </footer>
+
+  </body>
+</html>

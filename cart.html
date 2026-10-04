@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Корзина — AVNT</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/sections.css" />
+    <link rel="stylesheet" href="/src/cart.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__brand" href="./">AVNT</a>
+      <nav class="header__nav">
+        <a href="./#catalog">Каталог</a>
+        <a href="./#about">О бренде</a>
+        <a href="./#store">Магазин</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="header__cart">Корзина (0)</a>
+        <button class="header__menu" type="button">Меню</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="block cart">
+        <div class="cart__head">
+          <h1>Bag<sup id="cart-count">00</sup></h1>
+          <a class="link" href="./#catalog">Продолжить выбор <i>→</i></a>
+        </div>
+
+        <div class="cart__layout" id="cart-layout">
+          <ul id="cart-list"></ul>
+
+          <aside class="cart__summary">
+            <dl class="spec mono">
+              <div><dt>Pieces</dt><dd id="cart-pieces">00</dd></div>
+              <div><dt>Subtotal</dt><dd id="cart-subtotal">0 ₽</dd></div>
+              <div><dt>Delivery</dt><dd>При оформлении</dd></div>
+              <div class="cart__total"><dt>Total</dt><dd id="cart-total">0 ₽</dd></div>
+            </dl>
+            <a
+              class="cart__checkout"
+              id="cart-checkout"
+              href="https://t.me/kiwnt1"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>Заказать в Telegram</span><i>→</i>
+            </a>
+            <p class="mono cart__note">
+              Откроется чат с @kiwnt1 — список вещей уже будет в сообщении.
+            </p>
+            <p class="cart__terms">
+              Отправка в течение 1–3 рабочих дней. Возврат — 14 дней, если вещь не была в носке.
+            </p>
+            <p class="mono">This piece will not return.</p>
+          </aside>
+        </div>
+
+        <div class="cart__empty" id="cart-empty" hidden>
+          <p>Your bag<br />is empty.</p>
+          <a class="link" href="./#catalog">Перейти в каталог <i>→</i></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot__top">
+        <p class="foot__claim" data-lines>
+          <span class="line"><span>The few</span></span>
+          <span class="line"><span>find the few.</span></span>
+        </p>
+        <nav class="foot__col" data-reveal>
+          <p class="mono">Index</p>
+          <a href="./#catalog">Drop 01</a>
+          <a href="./#store">Found</a>
+          <a href="./#about">Manifest</a>
+        </nav>
+        <nav class="foot__col" data-reveal>
+          <p class="mono">Info</p>
+          <a href="info.html#delivery">Доставка</a>
+          <a href="info.html#payment">Оплата</a>
+          <a href="info.html#returns">Возврат</a>
+        </nav>
+        <nav class="foot__col" data-reveal>
+          <p class="mono">Contact</p>
+          <a href="https://t.me/kiwnt1" target="_blank" rel="noopener">Telegram</a>
+          <a href="info.html#contacts">Контакты</a>
+        </nav>
+      </div>
+      <div class="foot__mark" aria-label="AVNT 01">AVNT<sup>01</sup></div>
+      <div class="foot__bottom mono">
+        <span>© 2026 AVNT</span>
+        <span>Location / 55.7558° N 37.6173° E</span>
+        <span>MSK / <span id="clock">00:00:00</span></span>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/cart-page.js"></script>
+    <script type="module" src="/src/sections.js"></script>
+    <script type="module" src="/src/menu.js"></script>
+  </body>
+</html>

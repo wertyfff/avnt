@@ -1,0 +1,369 @@
+/* Product page. Shares tokens and components with styles.css / sections.css. */
+
+.pdp {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 88px);
+  align-items: start;
+  padding-top: clamp(88px, 9vw, 130px);
+}
+
+/* ---------- gallery ---------- */
+
+.pdp__main {
+  aspect-ratio: 4 / 5;
+  cursor: zoom-in;
+}
+
+.pdp__main.is-zoomed {
+  cursor: zoom-out;
+}
+
+.pdp__main-inner {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, #dedbd5 0%, #d0cdc6 100%);
+}
+
+.pdp__main img {
+  object-position: 50% 30%;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.pdp__main.is-switching .pdp__main-inner {
+  animation: wipe 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@keyframes wipe {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(1.06);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+.pdp__main .mono {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  left: auto;
+  bottom: auto;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.pdp__details {
+  display: grid;
+  grid-template-columns: repeat(var(--tiles, 4), 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pdp__detail {
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  text-align: left;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: outline-color 0.3s ease, background 0.3s ease;
+}
+
+.pdp__detail img {
+  object-position: 50% 30%;
+  opacity: 0.72;
+  transition: opacity 0.3s ease;
+}
+
+.pdp__detail:hover img,
+.pdp__detail.is-active img {
+  opacity: 1;
+}
+
+.pdp__detail.is-active {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ---------- panel ---------- */
+
+.pdp__panel {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.pdp__back {
+  align-self: flex-start;
+  transition: color 0.3s ease;
+}
+
+.pdp__back:hover {
+  color: var(--ink);
+}
+
+.pdp__title {
+  margin: -6px 0 4px;
+  font-weight: 500;
+  font-size: clamp(42px, 5.6vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.pdp .spec {
+  min-width: 0;
+}
+
+.pdp .spec div:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.pdp .status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pdp__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pdp__sizes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pdp__size {
+  padding: 13px 0;
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.pdp__size:hover {
+  border-color: var(--ink);
+}
+
+.pdp__size.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.pdp__guide-toggle {
+  transition: color 0.25s ease;
+}
+
+.pdp__guide-toggle:hover {
+  color: var(--ink);
+}
+
+.pdp__guide {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+}
+
+.pdp__guide th,
+.pdp__guide td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400;
+  text-align: right;
+}
+
+.pdp__guide th:first-child,
+.pdp__guide td:first-child {
+  text-align: left;
+}
+
+.pdp__guide td {
+  color: var(--ink);
+}
+
+.pdp__guide tr.is-active td {
+  font-weight: 500;
+  background: rgba(17, 17, 17, 0.06);
+}
+
+#pdp-hint.is-warn {
+  color: var(--ink);
+  animation: nudge-x 0.4s ease;
+}
+
+@keyframes nudge-x {
+  30% {
+    transform: translateX(-5px);
+  }
+  65% {
+    transform: translateX(4px);
+  }
+}
+
+.pdp__price {
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+.pdp__add {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 18px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.pdp__add i {
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.pdp__add:hover i {
+  transform: translateX(6px);
+}
+
+.pdp__info details {
+  border-top: 1px solid var(--line);
+}
+
+.pdp__info details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.pdp__info summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink);
+}
+
+.pdp__info summary::-webkit-details-marker {
+  display: none;
+}
+
+.pdp__info summary::after {
+  content: '+';
+}
+
+.pdp__info details[open] summary::after {
+  content: '–';
+}
+
+.pdp__info details p {
+  max-width: 52ch;
+  padding-bottom: 16px;
+  font-family: var(--font);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 1.55;
+  text-transform: none;
+  color: #45433f;
+}
+
+/* ---------- more ---------- */
+
+.more {
+  padding-top: 0;
+}
+
+.more__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 20px;
+  margin-bottom: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.more__head h2 {
+  font-size: clamp(26px, 3.6vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.more .pieces {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .pdp {
+    grid-template-columns: 1fr;
+  }
+  .pdp__panel {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .pdp__details {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .more .pieces {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdp__main.is-switching .pdp__main-inner,
+  .pdp__guide-toggle {
+  transition: color 0.25s ease;
+}
+
+.pdp__guide-toggle:hover {
+  color: var(--ink);
+}
+
+.pdp__guide {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+}
+
+.pdp__guide th,
+.pdp__guide td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400;
+  text-align: right;
+}
+
+.pdp__guide th:first-child,
+.pdp__guide td:first-child {
+  text-align: left;
+}
+
+.pdp__guide td {
+  color: var(--ink);
+}
+
+.pdp__guide tr.is-active td {
+  font-weight: 500;
+  background: rgba(17, 17, 17, 0.06);
+}
+
+#pdp-hint.is-warn {
+    animation: none;
+  }
+}
